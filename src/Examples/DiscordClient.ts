@@ -1,5 +1,4 @@
 
-
 const { Client, GatewayIntentBits } = require('discord.js');
 
 const DiscordClient = new Client({ intents: [GatewayIntentBits.Guilds ,

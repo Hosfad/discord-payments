@@ -7,7 +7,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "dev": "ts-node-dev src/index.ts",
+    "dev": "ts-node-dev src/Examples/index.ts",
     "build": "tsc",
     "start": "node build/index.js",
     "watch": "nodemon --ext *"

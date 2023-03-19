@@ -5,15 +5,14 @@ const fs = require("fs");
 import Cart from "./Cart";
 import path = require("path");
 const cartsDir = "Carts";
-
+if (!existsSync(cartsDir)) {
+  mkdirSync(cartsDir);
+}
 class CartManager extends EventEmitter {
   client: Client;
   constructor(client: Client) {
     super();
     this.client = client;
-    if (!existsSync(cartsDir)) {
-      mkdirSync(cartsDir);
-    }
   }
 
   /**

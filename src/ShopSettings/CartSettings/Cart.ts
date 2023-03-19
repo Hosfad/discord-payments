@@ -1,7 +1,7 @@
-import { Client } from "discord.js";
+import { Client, EmbedBuilder } from "discord.js";
 import { writeFile } from "fs/promises";
 import { sep } from "path";
-import { Product } from "../Types";
+import { Product } from "../../Types";
 
 const cartsDir = "Carts";
 
@@ -49,6 +49,30 @@ class Cart {
     async getGuild(){
         return await this.client.guilds.fetch(this.guildId);
     }
+
+
+   async getCartEmbed(){
+    const user = await this.getUser();
+        const embed = new EmbedBuilder()
+        .setAuthor({ name: user.username + "'s cart", iconURL: await user.avatarURL() })
+        .setColor("Green")
+        .setThumbnail( await user.avatarURL())
+        .setTimestamp()
+    
+        if (this.items.length === 0) {
+            embed.setDescription("Your cart is empty.");
+            embed.setColor("Yellow")
+        }else{
+         let str = "**Products**\n"
+            this.items.forEach((item) => {
+                str += `**${item.name}** - ${item.price}`;
+            });
+            embed.setDescription(str);
+        }
+
+        return embed
+    }
+
 
     /**
      * Save cart to local storage
