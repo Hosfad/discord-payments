@@ -7,10 +7,10 @@
     "lib/**/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev src/index.ts",
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json"
+    "start": "node build/index.js",
+    "watch": "nodemon --ext *"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,7 @@
   "keywords": [
     "discord",
     "discord.js",
-    "backup",
-    "clone",
+    "payments",
     "bot",
     "discord-payments"
   ],
@@ -30,16 +29,43 @@
     "url": "https://github.com/hosfad/discord-payments/issues"
   },
   "homepage": "https://github.com/hosfad/discord-payments#readme",
-  "dependencies": {
-    "discord.js": "^14.2.0",
-    "express": "^4.18.2"
-  },
   "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@types/node-fetch": "^2.5.7",
-    "prettier": "^2.0.4",
-    "tslint": "^6.1.1",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.9.4"
+    "@types/auth0": "^2.35.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.36",
+    "@types/node-cron": "^3.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "eslint": "^8.16.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "prettier": "^2.6.2",
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.2"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "discord.js": "^14.6.0",
+    "dom-to-image": "^2.6.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.2",
+    "extract-json-from-string": "^1.0.1",
+    "formdata-node": "^4.3.3",
+    "leaflet": "^1.9.3",
+    "node-cron": "^3.0.2",
+    "node-leaflet-image": "^0.4.3",
+    "nodemon": "^2.0.20",
+    "random-profile-generator": "^2.3.0",
+    "sha256": "^0.2.0",
+    "staticmaps": "^1.10.0",
+    "x-ray": "^2.3.3",
+    "yarn": "^1.22.19"
   }
 }

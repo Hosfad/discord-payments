@@ -1,4 +1,4 @@
-import express from "express";
+const express = require("express");
 import DiscordClient from "./DiscordClient";
 import CartManager from "./ShopSettings/CartManager";
 require("dotenv").config();

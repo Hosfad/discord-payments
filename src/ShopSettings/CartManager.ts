@@ -1,12 +1,9 @@
 import { Client, Guild, IntentsBitField, User } from "discord.js";
 import EventEmitter = require("events");
 import { existsSync, mkdirSync } from "fs";
-import { writeFile } from "fs/promises";
-// @ts-ignore
-import fs from "fs";
+const fs = require("fs");
 import Cart from "./Cart";
 import path = require("path");
-import { sep } from "path";
 const cartsDir = "Carts";
 
 class CartManager extends EventEmitter {
