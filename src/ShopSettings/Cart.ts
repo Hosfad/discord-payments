@@ -28,6 +28,7 @@ class Cart {
             guild: await this.getGuild(),
             product: product,
             cart: this,
+            
         }
         this.manager.emit("cart_product_added", data);
     }
